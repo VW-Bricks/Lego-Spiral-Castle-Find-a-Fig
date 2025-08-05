@@ -1,82 +1,188 @@
-﻿<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta http-equiv="Content-Style-Type" content="text/css" />
-	<meta name="generator" content="PDF Focus .Net 7.8.1.29" />
-	<title>Can you find these figs?</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fig Finder</title>
 <style>
-.ssdpage {position:relative; border:solid 1pt black; margin:10pt auto 10pt auto; overflow:hidden;}
-.ssddiv {position:absolute; }
-.ssdcheck {position:absolute; }
-.ssdinput {transform: scale(2.0); }
-.ssdspan {position:absolute; white-space:pre;}
-.ssdimg {position:absolute;}
-.ssdsvg {position:absolute;}
+
+  /* Flexbox Container for Text and Socials */
+  .header-socials {
+    display: flex;
+    justify-content: space-between; /* Pushes text to one side and socials to the other */
+    align-items: center; /* Vertically centers the text and images */
+    padding: 10px 20px;
+  }
+  .social-text {
+    flex-grow: 1; /* Allows this element to take up the available space */
+    text-align: center; /* Centers the text within its flexible space */
+  }
+
+  /* Socials Link Styling */
+  .social-links a {
+    margin: 0 15px;
+  }
+  .social-links a img {
+    width: 40px; /* Set a fixed size for the social icons */
+    height: 40px;
+    border: none;
+  }
+
+  /* Basic styling for the grid container */
+  .grid-container {
+    display: grid;
+    gap: 10px; /* Adjust the gap between images */
+    padding: 10px; /* Padding around the grid */
+    box-sizing: border-box;
+  }
+
+  /* Styling for the images within the grid */
+  .grid-item {
+    position: relative; /* Important for positioning the checkbox */
+    height: 300px;
+  }
+
+  /* Styling for the images within the grid */
+  .grid-item img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    /* object-fit: contain; resizes the image to fit without being cropped */
+    object-fit: contain;
+  }
+
+  .grid-item input[type="checkbox"] {
+      position: absolute; /* Positions the checkbox relative to its parent */
+      top: 10px;
+      left: 10px;
+      z-index: 10; /* Ensures the checkbox is on top of the image */
+      width: 25px; /* Adjust size */
+      height: 25px; /* Adjust size */
+      transform: scale(2.0);
+  }
+
+  /* Media queries for responsiveness:
+    This sets up a dynamic grid based on screen size.
+    You can customize these breakpoints and column counts.
+  */
+
+  /* For small screens (e.g., mobile phones) */
+  @media (max-width: 600px) {
+    .grid-container {
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+  }
+
+  /* For medium screens (e.g., tablets) */
+  @media (min-width: 601px) and (max-width: 1024px) {
+    .grid-container {
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+  }
+
+  /* For large screens (e.g., desktops) */
+  @media (min-width: 1025px) {
+    .grid-container {
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  h2 {
+    text-align: center;
+  }
+
+ /* Styling for the brickset image */
+ .brickset {
+   display: flex; /* Enable flexbox for centering */
+   justify-content: center; /* Center the content horizontally */
+   margin-top: 20px; /* Add some top margin for spacing */
+   margin-bottom: 20px; /* Add some bottom margin for spacing */
+ }
+
+   .brickset img {
+     display: block; /* Ensures the image behaves as a block-level element */
+     max-width: 400px; /* Limit the maximum width to 400px */
+     height: auto; /* Maintain aspect ratio */
+ }
+
 </style>
 </head>
 <body>
 
 
+<div class="header-socials">
+  <div class="social-text">
+    <h1>Can you find these minifigures?<BR>
+	Pouvez-vous trouver ces minifigurines?</h1>
+  </div>
+  <div class="social-links">
+  <H2>Follow me<H2>
+  <a href="https://www.instagram.com/vw_bricks" target="_blank"><img src="images/instagram.png" alt="Instagram"></a>
+  <a href="https://www.youtube.com/@VWBricks" target="_blank"><img src="images/youtube.png" alt="Youtube"></a>
+  <a href="https://www.flickr.com/photos/jeffvw/" target="_blank"><img src="images/Flickr.png" alt="Flickr"></a>
+  </div>
+</div>
 
+<h2>Group 1</h2>
 
-	<div class="ssdpage" style="width:792pt; height:612pt;">
-		<div class="ssddiv" style="left:73.5pt; top:73.5pt" >
-			<img class="ssdimg" style="width:648pt; height:501pt" src="images/image1.jpg" />
-			<div class="ssdcheck" style="top: 210px; left:  25px;"><input type="checkbox" id="myCheckbox1" name="myCheckbox1" class="ssdinput"></div>
-		    <div class="ssdcheck" style="top: 210px; left: 165px;"><input type="checkbox" id="myCheckbox2" name="myCheckbox2" class="ssdinput"></div>
-			<div class="ssdcheck" style="top: 210px; left: 300px;"><input type="checkbox" id="myCheckbox3" name="myCheckbox3" class="ssdinput"></div>
-			<div class="ssdcheck" style="top: 210px; left: 435px;"><input type="checkbox" id="myCheckbox4" name="myCheckbox4" class="ssdinput"></div>
-			<div class="ssdcheck" style="top: 210px; left: 570px;"><input type="checkbox" id="myCheckbox5" name="myCheckbox5" class="ssdinput"></div>
-			<div class="ssdcheck" style="top: 210px; left: 715px;"><input type="checkbox" id="myCheckbox6" name="myCheckbox6" class="ssdinput"></div>
+<div class="grid-container">
+  <div class="grid-item"><input type="checkbox"><img src="images/Page 1 Fig 1.png" alt="Image 1"></div>
+  <div class="grid-item"><input type="checkbox"><img src="images/Page 1 Fig 2.png" alt="Image 2"></div>
+  <div class="grid-item"><input type="checkbox"><img src="images/Page 1 Fig 3.png" alt="Image 3"></div>
+  <div class="grid-item"><input type="checkbox"><img src="images/Page 1 Fig 4.png" alt="Image 4"></div>
+  <div class="grid-item"><input type="checkbox"><img src="images/Page 1 Fig 5.png" alt="Image 5"></div>
+  <div class="grid-item"><input type="checkbox"><img src="images/Page 1 Fig 6.png" alt="Image 6"></div>
+  <div class="grid-item"><input type="checkbox"><img src="images/Page 1 Fig 7.png" alt="Image 7"></div>
+  <div class="grid-item"><input type="checkbox"><img src="images/Page 1 Fig 8.png" alt="Image 8"></div>
+  <div class="grid-item"><input type="checkbox"><img src="images/Page 1 Fig 9.png" alt="Image 9"></div>
+  <div class="grid-item"><input type="checkbox"><img src="images/Page 1 Fig 10.png" alt="Image 10"></div>
+  <div class="grid-item"><input type="checkbox"><img src="images/Page 1 Fig 11.png" alt="Image 11"></div>
+  <div class="grid-item"><input type="checkbox"><img src="images/Page 1 Fig 12.png" alt="Image 12"></div>
+  <div class="grid-item"><input type="checkbox"><img src="images/Page 1 Fig 13.png" alt="Image 13"></div>
+</div>
 
-			<div class="ssdcheck" style="top: 390px; left:  25px;"><input type="checkbox" id="myCheckbox7" name="myCheckbox7" class="ssdinput"></div>
-		    <div class="ssdcheck" style="top: 390px; left: 130px;"><input type="checkbox" id="myCheckbox8" name="myCheckbox8" class="ssdinput"></div>
-			<div class="ssdcheck" style="top: 390px; left: 245px;"><input type="checkbox" id="myCheckbox9" name="myCheckbox9" class="ssdinput"></div>
-			<div class="ssdcheck" style="top: 390px; left: 355px;"><input type="checkbox" id="myCheckbox10" name="myCheckbox10" class="ssdinput"></div>
-			<div class="ssdcheck" style="top: 390px; left: 480px;"><input type="checkbox" id="myCheckbox11" name="myCheckbox11" class="ssdinput"></div>
-			<div class="ssdcheck" style="top: 390px; left: 595px;"><input type="checkbox" id="myCheckbox12" name="myCheckbox12" class="ssdinput"></div>
-			<div class="ssdcheck" style="top: 390px; left: 710px;"><input type="checkbox" id="myCheckbox13" name="myCheckbox13" class="ssdinput"></div>
-	    </div>
-	</div>
-	<div class="ssdpage" style="width:792pt; height:612pt;">
-		<div class="ssddiv" style="left:73.5pt; top:73.5pt" >
-			<img class="ssdimg" style="width:648pt; height:501pt" src="images/image2.jpg" />
-			<div class="ssdcheck" style="top: 200px; left:   5px;"><input type="checkbox" id="myCheckbox14" name="myCheckbox14" class="ssdinput"></div>
-			<div class="ssdcheck" style="top: 200px; left: 125px;"><input type="checkbox" id="myCheckbox15" name="myCheckbox15" class="ssdinput"></div>
-			<div class="ssdcheck" style="top: 200px; left: 245px;"><input type="checkbox" id="myCheckbox16" name="myCheckbox16" class="ssdinput"></div>
-			<div class="ssdcheck" style="top: 200px; left: 360px;"><input type="checkbox" id="myCheckbox17" name="myCheckbox17" class="ssdinput"></div>
-			<div class="ssdcheck" style="top: 200px; left: 465px;"><input type="checkbox" id="myCheckbox18" name="myCheckbox18" class="ssdinput"></div>
-			<div class="ssdcheck" style="top: 200px; left: 590px;"><input type="checkbox" id="myCheckbox19" name="myCheckbox19" class="ssdinput"></div>
-			<div class="ssdcheck" style="top: 200px; left: 715px;"><input type="checkbox" id="myCheckbox19" name="myCheckbox19" class="ssdinput"></div>
+<h2>Group 2</h2>
 
-			<div class="ssdcheck" style="top: 400px; left:   0px;"><input type="checkbox" id="myCheckbox20" name="myCheckbox20" class="ssdinput"></div>
-			<div class="ssdcheck" style="top: 400px; left: 115px;"><input type="checkbox" id="myCheckbox21" name="myCheckbox21" class="ssdinput"></div>
-			<div class="ssdcheck" style="top: 400px; left: 230px;"><input type="checkbox" id="myCheckbox22" name="myCheckbox22" class="ssdinput"></div>
-			<div class="ssdcheck" style="top: 400px; left: 350px;"><input type="checkbox" id="myCheckbox23" name="myCheckbox23" class="ssdinput"></div>
-			<div class="ssdcheck" style="top: 400px; left: 470px;"><input type="checkbox" id="myCheckbox24" name="myCheckbox24" class="ssdinput"></div>
-			<div class="ssdcheck" style="top: 400px; left: 590px;"><input type="checkbox" id="myCheckbox25" name="myCheckbox25" class="ssdinput"></div>
-			<div class="ssdcheck" style="top: 400px; left: 715px;"><input type="checkbox" id="myCheckbox26" name="myCheckbox26" class="ssdinput"></div>
-		</div>
-    </div>
-	<div class="ssdpage" style="width:792pt; height:612pt;">
-		<div class="ssddiv" style="left:73.5pt; top:73.5pt" >
-			<img class="ssdimg" style="width:648pt; height:501pt" src="images/image3.jpg" />
-			<div class="ssdcheck" style="top: 190px; left:   0px;"><input type="checkbox" id="myCheckbox7" name="myCheckbox7" class="ssdinput"></div>
-		    <div class="ssdcheck" style="top: 190px; left: 120px;"><input type="checkbox" id="myCheckbox8" name="myCheckbox8" class="ssdinput"></div>
-			<div class="ssdcheck" style="top: 190px; left: 235px;"><input type="checkbox" id="myCheckbox9" name="myCheckbox9" class="ssdinput"></div>
-			<div class="ssdcheck" style="top: 190px; left: 360px;"><input type="checkbox" id="myCheckbox10" name="myCheckbox10" class="ssdinput"></div>
-			<div class="ssdcheck" style="top: 190px; left: 490px;"><input type="checkbox" id="myCheckbox11" name="myCheckbox11" class="ssdinput"></div>
-			<div class="ssdcheck" style="top: 190px; left: 615px;"><input type="checkbox" id="myCheckbox12" name="myCheckbox12" class="ssdinput"></div>
-			<div class="ssdcheck" style="top: 190px; left: 735px;"><input type="checkbox" id="myCheckbox13" name="myCheckbox13" class="ssdinput"></div>
+<div class="grid-container">
+  <div class="grid-item"><input type="checkbox"><img src="images/Page 2 Fig 1.png" alt="Image 14"></div>
+  <div class="grid-item"><input type="checkbox"><img src="images/Page 2 Fig 2.png" alt="Image 15"></div>
+  <div class="grid-item"><input type="checkbox"><img src="images/Page 2 Fig 3.png" alt="Image 16"></div>
+  <div class="grid-item"><input type="checkbox"><img src="images/Page 2 Fig 4.png" alt="Image 17"></div>
+  <div class="grid-item"><input type="checkbox"><img src="images/Page 2 Fig 5.png" alt="Image 18"></div>
+  <div class="grid-item"><input type="checkbox"><img src="images/Page 2 Fig 6.png" alt="Image 19"></div>
+  <div class="grid-item"><input type="checkbox"><img src="images/Page 2 Fig 7.png" alt="Image 20"></div>
+  <div class="grid-item"><input type="checkbox"><img src="images/Page 2 Fig 8.png" alt="Image 21"></div>
+  <div class="grid-item"><input type="checkbox"><img src="images/Page 2 Fig 9.png" alt="Image 22"></div>
+  <div class="grid-item"><input type="checkbox"><img src="images/Page 2 Fig 10.png" alt="Image 23"></div>
+  <div class="grid-item"><input type="checkbox"><img src="images/Page 2 Fig 11.png" alt="Image 24"></div>
+  <div class="grid-item"><input type="checkbox"><img src="images/Page 2 Fig 12.png" alt="Image 25"></div>
+  <div class="grid-item"><input type="checkbox"><img src="images/Page 2 Fig 13.png" alt="Image 26"></div>
+  <div class="grid-item"><input type="checkbox"><img src="images/Page 2 Fig 14.png" alt="Image 27"></div>
+</div>
 
+<h2>Group 3</h2>
 
-			<div class="ssdcheck" style="top: 425px; left:   0px;"><input type="checkbox" id="myCheckbox1" name="myCheckbox1" class="ssdinput"></div>
-		    <div class="ssdcheck" style="top: 425px; left: 130px;"><input type="checkbox" id="myCheckbox2" name="myCheckbox2" class="ssdinput"></div>
-			<div class="ssdcheck" style="top: 425px; left: 285px;"><input type="checkbox" id="myCheckbox3" name="myCheckbox3" class="ssdinput"></div>
-			<div class="ssdcheck" style="top: 425px; left: 455px;"><input type="checkbox" id="myCheckbox4" name="myCheckbox4" class="ssdinput"></div>
-			<div class="ssdcheck" style="top: 425px; left: 590px;"><input type="checkbox" id="myCheckbox5" name="myCheckbox5" class="ssdinput"></div>
-			<div class="ssdcheck" style="top: 425px; left: 720px;"><input type="checkbox" id="myCheckbox6" name="myCheckbox6" class="ssdinput"></div>
-		</div>
-	</div>
+<div class="grid-container">
+  <div class="grid-item"><input type="checkbox"><img src="images/Page 3 Fig 1.png" alt="Image 28"></div>
+  <div class="grid-item"><input type="checkbox"><img src="images/Page 3 Fig 2.png" alt="Image 29"></div>
+  <div class="grid-item"><input type="checkbox"><img src="images/Page 3 Fig 3.png" alt="Image 30"></div>
+  <div class="grid-item"><input type="checkbox"><img src="images/Page 3 Fig 4.png" alt="Image 31"></div>
+  <div class="grid-item"><input type="checkbox"><img src="images/Page 3 Fig 5.png" alt="Image 32"></div>
+  <div class="grid-item"><input type="checkbox"><img src="images/Page 3 Fig 6.png" alt="Image 33"></div>
+  <div class="grid-item"><input type="checkbox"><img src="images/Page 3 Fig 7.png" alt="Image 34"></div>
+  <div class="grid-item"><input type="checkbox"><img src="images/Page 3 Fig 8.png" alt="Image 35"></div>
+  <div class="grid-item"><input type="checkbox"><img src="images/Page 3 Fig 9.png" alt="Image 36"></div>
+  <div class="grid-item"><input type="checkbox"><img src="images/Page 3 Fig 10.png" alt="Image 37"></div>
+  <div class="grid-item"><input type="checkbox"><img src="images/Page 3 Fig 11.png" alt="Image 38"></div>
+  <div class="grid-item"><input type="checkbox"><img src="images/Page 3 Fig 12.png" alt="Image 39"></div>
+  <div class="grid-item"><input type="checkbox"><img src="images/Page 3 Fig 13.png" alt="Image 40"></div>
+</div>
+
+  <div class="brickset"><a href="https://www.brickset.com/" target="_blank"><img src="images/brickset.png" alt="Brickset.com"></a></div>
+
 </body>
 </html>

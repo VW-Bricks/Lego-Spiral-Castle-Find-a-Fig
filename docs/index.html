@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Fig Finder</title>
 <style>
 
@@ -109,6 +110,28 @@
      height: auto; /* Maintain aspect ratio */
  }
 
+ #goodJobMessage {
+   position: fixed; /* Positions the element relative to the viewport */
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%); /* Centers the element perfectly */
+   background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+   color: white;
+   padding: 20px;
+   border-radius: 10px;
+   text-align: center;
+   font-size: 2em;
+   z-index: 1000; /* Ensures the message is on top of other content */
+}
+
+#resetButton {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
 </style>
 </head>
 <body>
@@ -120,14 +143,14 @@
 	Pouvez-vous trouver ces minifigurines?</h1>
   </div>
   <div class="social-links">
-  <H2>Follow me<H2>
+  <H2>Follow / Suivre les VW Bricks<H2>
   <a href="https://www.instagram.com/vw_bricks" target="_blank"><img src="images/instagram.png" alt="Instagram"></a>
   <a href="https://www.youtube.com/@VWBricks" target="_blank"><img src="images/youtube.png" alt="Youtube"></a>
   <a href="https://www.flickr.com/photos/jeffvw/" target="_blank"><img src="images/Flickr.png" alt="Flickr"></a>
   </div>
 </div>
 
-<h2>Group 1</h2>
+<h2>Group 1 / Groupe 1</h2>
 
 <div class="grid-container">
   <div class="grid-item"><input type="checkbox"><img src="images/Page 1 Fig 1.png" alt="Image 1"></div>
@@ -145,7 +168,7 @@
   <div class="grid-item"><input type="checkbox"><img src="images/Page 1 Fig 13.png" alt="Image 13"></div>
 </div>
 
-<h2>Group 2</h2>
+<h2>Group 2 / Groupe 2</h2>
 
 <div class="grid-container">
   <div class="grid-item"><input type="checkbox"><img src="images/Page 2 Fig 1.png" alt="Image 14"></div>
@@ -164,7 +187,7 @@
   <div class="grid-item"><input type="checkbox"><img src="images/Page 2 Fig 14.png" alt="Image 27"></div>
 </div>
 
-<h2>Group 3</h2>
+<h2>Group 3 / Groupe 3</h2>
 
 <div class="grid-container">
   <div class="grid-item"><input type="checkbox"><img src="images/Page 3 Fig 1.png" alt="Image 28"></div>
@@ -182,7 +205,54 @@
   <div class="grid-item"><input type="checkbox"><img src="images/Page 3 Fig 13.png" alt="Image 40"></div>
 </div>
 
-  <div class="brickset"><a href="https://www.brickset.com/" target="_blank"><img src="images/brickset.png" alt="Brickset.com"></a></div>
+<div class="brickset"><a href="https://www.brickset.com/" target="_blank"><img src="images/brickset.png" alt="Brickset.com"></a> </div>
+
+<div id="goodJobMessage" style="display: none;">
+  <p>Good Job! <br> Bon travail!</p>
+  <div> <button id="resetButton">Reset</button> </div>
+</div>
+
+<script>
+  // Get all the checkboxes on the page
+  const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+  // Get the message div
+  const message = document.getElementById('goodJobMessage');
+  // Get the reset button
+  const resetButton = document.getElementById('resetButton');
+
+  // Add a click event listener to the reset button
+  resetButton.addEventListener('click', () => {
+      // Loop through all checkboxes and uncheck them
+      checkboxes.forEach(checkbox => {
+        checkbox.checked = false;
+      });
+
+      // Hide the "Good Job!" message
+      message.style.display = 'none';
+  });
+
+  // Function to check if all checkboxes are checked
+  function areAllCheckboxesChecked() {
+    for (const checkbox of checkboxes) {
+      if (!checkbox.checked) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  // Add a change event listener to each checkbox
+  checkboxes.forEach(checkbox => {
+    checkbox.addEventListener('change', () => {
+      if (areAllCheckboxesChecked()) {
+        message.style.display = 'block'; // Show the message
+      } else {
+        message.style.display = 'none'; // Hide the message
+      }
+    });
+  });
+
+</script>
 
 </body>
 </html>
